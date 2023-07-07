@@ -1,0 +1,209 @@
+/*
+Copyright 2023 Le fractal
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is furnished
+to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS
+OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
+THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+
+/* Custom theme by Le fractal - https://direct.disquette.top. */
+/* shoutout appreciated! */
+
+    /* Smaller header */
+    :root {
+        --header-height: 50px;
+    }
+
+    [class^="Sidebar_root"],
+    [class*=" Sidebar_root"] {
+        top: calc(var(--header-height) - 1px);
+    }
+
+    /* Add padding to chat */
+    [class^="ChatContainer_virtuoso"] > div > div,
+    [class*=" ChatContainer_virtuoso"] > div > div {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    /* Show user name for each message, inline */
+    [class^="ChatUserMessage_repeat"],
+    [class*=" ChatUserMessage_repeat"],
+    [class^="ChatUserMessage_user"],
+    [class*=" ChatUserMessage_user"] {
+        display: inline-block!important;
+        margin-right: 3px;
+    }
+
+    [class^="ChatUserMessage_user_"]::after,
+    [class*=" ChatUserMessage_user_"]::after,
+    [class^="ChatUserMessage_repeat"]::after,
+    [class*=" ChatUserMessage_repeat"]::after {
+        content: ": ";
+        font-weight: normal;
+    }
+
+    [class^="ChatUserMessage_userBadges"],
+    [class*=" ChatUserMessage_userBadges"] {
+        margin: 0px 0px 0px -4px !important;
+        float: left;
+        /* Show badges on left of username */
+    }
+
+    [class^="ChatUserMessage_message"] p,
+    [class*=" ChatUserMessage_message"] p {
+        display: inline;
+    }
+
+    /* Fix spacing between leading message and followups */
+    [class^="ChatUserMessage_messagePadding"],
+    [class*=" ChatUserMessage_messagePadding"] {
+        padding: 0;
+    }
+
+    /* Remove colorful border on  messages */
+    [class^="ChatUserMessage_root"],
+    [class*=" ChatUserMessage_root"],
+    [class^="ChatUserMessage_ownMessage"],
+    [class*=" ChatUserMessage_ownMessage"] {
+        border: none!important;
+        margin-bottom: 0.3em;
+    }
+
+    /* Colors */
+    :root {
+        --darker-grey: #0B0C0D;
+        --lighter-grey: #131516;
+        --whitish: rgb(239, 239, 241);
+    }
+
+    body {
+        background-color: var(--darker-grey);
+    }
+
+    [class^="Header_header"], [class*=" Header_header"] {
+        background-color: var(--darker-grey);
+    }
+    
+    [class^="Content_mobileActionButtons"], [class*=" Content_mobileActionButtons"] {
+        color: var(--theme-color-action);
+        font-weight:bolder;
+    }
+    #chat-container {
+        background-color: var(--lighter-grey);
+    }
+
+    [class^="ChatContainer_chatTextField"],
+    [class*=" ChatContainer_chatTextField"] {
+        border-top: none;
+    }
+
+    [class^="ChatTextField_root"],
+    [class*=" ChatTextField_root"] {
+        background-color: transparent;
+    }
+
+    header {
+        background-color: var(--darker-grey);
+    }
+
+    [class^="ChatUserMessage_background"],
+    [class*=" ChatUserMessage_background"] {
+        background-color: transparent!important;
+    }
+
+    [class^="DesktopContent_bottomSectionContent"],
+    [class*=" DesktopContent_bottomSectionContent"] {
+        background-color: var(--darker-grey);
+        color: #fff!important;
+    }
+
+    [class^="ContentHeader_root"],
+    [class*=" ContentHeader_root"] {
+        margin-top: 1em;
+    }
+
+    [class^="ContentHeader_titleSection"],
+    [class*=" ContentHeader_titleSection"] {
+        padding: 2em;
+        border-radius: var(--theme-rounded-corners);
+        background-color: var(--lighter-grey);
+    }
+
+    [class^="CustomPageContent_customPageContent"],
+    [class*=" CustomPageContent_customPageContent"],
+    [class^="Content_bottomPageContentContainer"],
+    [class*=" Content_bottomPageContentContainer"] {
+        background-color: var(--darker-grey);
+        color: var(--whitish);
+    }
+
+    [class^="CustomPageContent_customPageContent"] a,
+    [class*=" CustomPageContent_customPageContent"] a,
+    [class^="Content_bottomPageContentContainer"] a,
+    [class*=" Content_bottomPageContentContainer"] a {
+        filter: saturate(2);
+        text-decoration: underline;
+        /*font-weight: bold;*/
+    }
+
+    [class^="ContentHeader_logoTitleSection"],
+    [class*=" ContentHeader_logoTitleSection"] {
+        color: var(--whitish);
+    }
+
+    [class^="ContentHeader_tagList"] > span,
+    [class*=" ContentHeader_tagList"] > span {
+        background-color: #393939;
+        color: rgb(140, 140, 140);
+        padding-left: 9px;
+        border-radius: 20px;
+        padding-right: 5px;
+        padding-bottom: 2px;
+    }
+
+    [class^="Logo_root"],
+    [class*=" Logo_root"] {
+        border-color: var(--theme-color-action-hover);
+        background-color: var(--theme-color-action);
+    }
+
+    a[class^="SocialLinks_link"],
+    a[class*=" SocialLinks_link"] {
+        /*background-color: var(--theme-color-components-primary-button-background);*/
+        background-color: var(--whitish);
+        padding: 5px;
+        width: 40px;
+        border-radius: 20px;
+    }
+
+    [class^="ChatTextField_root"] :empty::before,
+    [class*=" ChatTextField_root"] :empty::before {
+        color: var(--theme-color-action);
+        font-weight: bold;
+    }
+
+    [class^="ChatTextField_root"],
+    [class*=" ChatTextField_root"] {
+        color: var(--whitish);
+    }
+
+    [class^="ChatTextField_inputWrap"],
+    [class*=" ChatTextField_inputWrap"] {
+        background-color: transparent!important;
+        border: 1px solid var(--theme-color-action);
+        color: var(--whitish)!important;
+    }
