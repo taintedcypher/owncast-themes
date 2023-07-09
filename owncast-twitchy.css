@@ -17,11 +17,8 @@ OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHE
 AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
 THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-
-
-/* Custom theme by Le fractal - https://direct.disquette.top. */
-/* shoutout appreciated! */
-
+    /* Custom theme by Le fractal - https://direct.disquette.top. */
+    /* shoutout appreciated! */
     /* Smaller header */
     :root {
         --header-height: 50px;
@@ -86,6 +83,7 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     /* Colors */
     :root {
         --darker-grey: #0B0C0D;
+        --lighter-grey-2: #29292E;
         --lighter-grey: #131516;
         --whitish: rgb(239, 239, 241);
     }
@@ -94,14 +92,17 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         background-color: var(--darker-grey);
     }
 
-    [class^="Header_header"], [class*=" Header_header"] {
+    [class^="Header_header"],
+    [class*=" Header_header"] {
         background-color: var(--darker-grey);
     }
-    
-    [class^="Content_mobileActionButtons"], [class*=" Content_mobileActionButtons"] {
+
+    [class^="Content_mobileActionButtons"],
+    [class*=" Content_mobileActionButtons"] {
         color: var(--theme-color-action);
-        font-weight:bolder;
+        font-weight: bolder;
     }
+
     #chat-container {
         background-color: var(--lighter-grey);
     }
@@ -143,6 +144,22 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         background-color: var(--lighter-grey);
     }
 
+    .ant-tabs-tab {
+        /*background-color: red;*/
+        color: var(--theme-color-action);
+    }
+    .ant-tabs-tab:hover {
+        color: var(--whitish);
+    }
+    .ant-tabs-tab-active {
+        /*background-color: lime!important;*/
+        background-color: transparent!important;
+        
+    }
+    .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+	    color: var(--whitish)!important;
+    }
+
     [class^="CustomPageContent_customPageContent"],
     [class*=" CustomPageContent_customPageContent"],
     [class^="Content_bottomPageContentContainer"],
@@ -155,11 +172,17 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     [class*=" CustomPageContent_customPageContent"] a,
     [class^="Content_bottomPageContentContainer"] a,
     [class*=" Content_bottomPageContentContainer"] a {
-        filter: saturate(2);
+        filter: saturate(1);
         text-decoration: underline;
-        /*font-weight: bold;*/
+        font-weight: bold;
     }
 
+    
+    [class^="CustomPageContent_customPageContent"] hr,
+    [class*=" CustomPageContent_customPageContent"] hr {
+        border-top: 1px solid var(--lighter-grey-2);
+    }
+    
     [class^="ContentHeader_logoTitleSection"],
     [class*=" ContentHeader_logoTitleSection"] {
         color: var(--whitish);
@@ -205,5 +228,71 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     [class*=" ChatTextField_inputWrap"] {
         background-color: transparent!important;
         border: 1px solid var(--theme-color-action);
+        color: var(--whitish)!important;
+    }
+    
+    [class^="ChatSystemMessage_chatSystemMessage"],
+    [class*=" ChatSystemMessage_chatSystemMessage"] {
+        /*
+        background: var(--theme-color-action);
+        background: linear-gradient(70deg,var(--theme-color-action),var(--theme-color-action-hover) 40%,var(--theme-color-action) 80%);
+        */
+        background:none;
+        margin: 5px 5px 10px;
+        border-radius: 5px;
+        border-width: 1px;
+        border-style: solid;
+        padding: 12px;
+    }
+    
+    /* Followers list */
+    [class^="FollowerCollection_followerRow"] > div > a,
+    [class*=" FollowerCollection_followerRow"] > div > a {
+        text-decoration: none;
+    }
+    [class^="FollowerCollection_followerRow"] > div > a > div,
+    [class*=" FollowerCollection_followerRow"] > div > a > div {
+        background-color: transparent;
+        
+    }
+    
+    [class^="SingleFollower_username"],
+    [class*=" SingleFollower_username"],
+    [class^="SingleFollower_account"],
+    [class*=" SingleFollower_account"] {
+        color: var(--whitish)!important;
+        font-weight: normal;
+    }
+    
+    [class^="SingleFollower_account"],
+    [class*=" SingleFollower_account"] {
+        /*display: none!important;*/
+    }
+    
+    [class^="SingleFollower_follower"],
+    [class*=" SingleFollower_follower"] {
+        border: none;
+        border-bottom: 3px solid transparent;
+    }
+    [class^="SingleFollower_follower"]:hover,
+    [class*=" SingleFollower_follower"]:hover {
+        border: none;
+        border-bottom: 3px solid var(--theme-color-action);
+        border-radius: 0
+    }
+    
+    [class^="FollowerCollection_pagination"] > li > button,
+    [class*=" FollowerCollection_pagination"] > li > button,
+    [class^="FollowerCollection_pagination"] > li,
+    [class*=" FollowerCollection_pagination"] > li {
+        background-color: var(--lighter-grey-2)!important;
+        border: none!important;
+        font-weight: bold!important;
+    }
+    
+    [class^="FollowerCollection_pagination"] > li > button,
+    [class*=" FollowerCollection_pagination"] > li > button,
+    [class^="FollowerCollection_pagination"] > li > a,
+    [class*=" FollowerCollection_pagination"] > li > a {
         color: var(--whitish)!important;
     }
