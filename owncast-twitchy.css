@@ -264,11 +264,7 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         font-weight: normal;
     }
     
-    [class^="SingleFollower_account"],
-    [class*=" SingleFollower_account"] {
-        /*display: none!important;*/
-    }
-    
+   
     [class^="SingleFollower_follower"],
     [class*=" SingleFollower_follower"] {
         border: none;
@@ -296,3 +292,13 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     [class*=" FollowerCollection_pagination"] > li > a {
         color: var(--whitish)!important;
     }
+
+    /* Dark player control bar */
+    .vjs-owncast .vjs-control-bar {
+        background-color:var(--lighter-grey)!important;
+    }
+    .vjs-owncast .vjs-control,
+       .vjs-owncast .vjs-control-bar {
+        color:var(--whitish);
+    }
+       
