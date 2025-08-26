@@ -11,9 +11,9 @@ Well you could use this theme!
 ## How to use
 
 ### Requirements
-- Owncast 0.1.1
-  
-**Note:** A the time of writing, Owncast 0.1.1 has **not** been released yet. You could try using this theme on Owncast 0.1.0, but it'll probably break in all kind of painful ways!
+- Owncast 0.2.*
+
+**Note about Owncast 0.2.\***: Due to changes in the underlying htm lmarkup of the chat, the badges that appear when a user is authenticated or is a moderator cannot be aligned consistently. For this reason, the badges are not presented to the left of the username anymore.
 
 ### Installation
 

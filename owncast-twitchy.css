@@ -41,8 +41,7 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     [class*=" ChatUserMessage_repeat"],
     [class^="ChatUserMessage_user"],
     [class*=" ChatUserMessage_user"] {
-        display: inline-block!important;
-        margin-right: 3px;
+        display: inline!important;
     }
 
     [class^="ChatUserMessage_user_"]::after,
@@ -55,9 +54,14 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
     [class^="ChatUserMessage_userBadges"],
     [class*=" ChatUserMessage_userBadges"] {
-        margin: 0px 0px 0px -4px !important;
-        float: left;
-        /* Show badges on left of username */
+        margin: 0px !important;
+    }
+
+    [class^="ChatUserBadge_badge_"],
+    [class*=" ChatUserBadge_badge_"] {
+        width: 10px !important;
+        height: 10px !important;
+        margin-left: 2px !important;
     }
 
     [class^="ChatUserMessage_message"] p,
