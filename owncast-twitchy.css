@@ -19,67 +19,51 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
     /* Custom theme by Le fractal - https://direct.disquette.top. */
     /* shoutout appreciated! */
+    /* Owncast 0.3.0 puts a build hash between module and class names. */
     /* Smaller header */
     :root {
         --header-height: 50px;
     }
 
-    [class^="Sidebar_root"],
-    [class*=" Sidebar_root"] {
-        top: calc(var(--header-height) - 1px);
-    }
-
     /* Add padding to chat */
-    [class^="ChatContainer_virtuoso"] > div > div,
-    [class*=" ChatContainer_virtuoso"] > div > div {
+    #virtuoso > div > div {
         padding-left: 1em;
         padding-right: 1em;
     }
 
     /* Show user name for each message, inline */
-    [class^="ChatUserMessage_repeat"],
-    [class*=" ChatUserMessage_repeat"],
-    [class^="ChatUserMessage_user"],
-    [class*=" ChatUserMessage_user"] {
+    .chat-message_user [class*="__repeatUser"],
+    .chat-message_user [class*="__user"] {
         display: inline!important;
     }
 
-    [class^="ChatUserMessage_user_"]::after,
-    [class*=" ChatUserMessage_user_"]::after,
-    [class^="ChatUserMessage_repeat"]::after,
-    [class*=" ChatUserMessage_repeat"]::after {
+    .chat-message_user > div > [class*="__user"]::after,
+    .chat-message_user [class*="__repeatUser"]::after {
         content: ": ";
         font-weight: normal;
     }
 
-    [class^="ChatUserMessage_userBadges"],
-    [class*=" ChatUserMessage_userBadges"] {
+    .chat-message_user [class*="__userBadges"] {
         margin: 0px !important;
     }
 
-    [class^="ChatUserBadge_badge_"],
-    [class*=" ChatUserBadge_badge_"] {
+    .chat-user-badge {
         width: 10px !important;
         height: 10px !important;
         margin-left: 2px !important;
     }
 
-    [class^="ChatUserMessage_message"] p,
-    [class*=" ChatUserMessage_message"] p {
+    .chat-message_user [class*="__message"] p {
         display: inline;
     }
 
     /* Fix spacing between leading message and followups */
-    [class^="ChatUserMessage_messagePadding"],
-    [class*=" ChatUserMessage_messagePadding"] {
+    .chat-message_user {
         padding: 0;
     }
 
     /* Remove colorful border on  messages */
-    [class^="ChatUserMessage_root"],
-    [class*=" ChatUserMessage_root"],
-    [class^="ChatUserMessage_ownMessage"],
-    [class*=" ChatUserMessage_ownMessage"] {
+    .chat-message_user > div {
         border: none!important;
         margin-bottom: 0.3em;
     }
@@ -96,13 +80,11 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         background-color: var(--darker-grey);
     }
 
-    [class^="Header_header"],
-    [class*=" Header_header"] {
+    .global-header {
         background-color: var(--darker-grey);
     }
 
-    [class^="Content_mobileActionButtons"],
-    [class*=" Content_mobileActionButtons"] {
+    [class*="Content-module"][class*="__mobileActionButtons"] {
         color: var(--theme-color-action);
         font-weight: bolder;
     }
@@ -111,13 +93,11 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         background-color: var(--lighter-grey);
     }
 
-    [class^="ChatContainer_chatTextField"],
-    [class*=" ChatContainer_chatTextField"] {
+    [class*="ChatContainer-module"][class*="__chatTextField"] {
         border-top: none;
     }
 
-    [class^="ChatTextField_root"],
-    [class*=" ChatTextField_root"] {
+    #chat-input {
         background-color: transparent;
     }
 
@@ -125,34 +105,30 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         background-color: var(--darker-grey);
     }
 
-    [class^="ChatUserMessage_background"],
-    [class*=" ChatUserMessage_background"] {
+    .chat-message_user [class*="__background"] {
         background-color: transparent!important;
     }
 
-    [class^="DesktopContent_bottomSectionContent"],
-    [class*=" DesktopContent_bottomSectionContent"] {
+    [class*="DesktopContent-module"][class*="__bottomSectionContent"] {
         background-color: var(--darker-grey);
         color: #fff!important;
     }
 
-    [class^="ContentHeader_root"],
-    [class*=" ContentHeader_root"] {
+    [class*="ContentHeader-module"][class*="__root"] {
         margin-top: 1em;
     }
 
-    [class^="ContentHeader_titleSection"],
-    [class*=" ContentHeader_titleSection"] {
+    [class*="ContentHeader-module"][class*="__titleSection"] {
         padding: 2em;
         border-radius: var(--theme-rounded-corners);
         background-color: var(--lighter-grey);
     }
 
-    .ant-tabs-tab {
+    .ant-tabs .ant-tabs-tab {
         /*background-color: red;*/
         color: var(--theme-color-action);
     }
-    .ant-tabs-tab:hover {
+    .ant-tabs .ant-tabs-tab:hover {
         color: var(--whitish);
     }
     .ant-tabs-tab-active {
@@ -164,36 +140,29 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 	    color: var(--whitish)!important;
     }
 
-    [class^="CustomPageContent_customPageContent"],
-    [class*=" CustomPageContent_customPageContent"],
-    [class^="Content_bottomPageContentContainer"],
-    [class*=" Content_bottomPageContentContainer"] {
+    #custom-page-content > div,
+    [class*="Content-module"][class*="__bottomPageContentContainer"] {
         background-color: var(--darker-grey);
         color: var(--whitish);
     }
 
-    [class^="CustomPageContent_customPageContent"] a,
-    [class*=" CustomPageContent_customPageContent"] a,
-    [class^="Content_bottomPageContentContainer"] a,
-    [class*=" Content_bottomPageContentContainer"] a {
+    #custom-page-content > div a,
+    [class*="Content-module"][class*="__bottomPageContentContainer"] a {
         filter: saturate(1);
         text-decoration: underline;
         font-weight: bold;
     }
 
     
-    [class^="CustomPageContent_customPageContent"] hr,
-    [class*=" CustomPageContent_customPageContent"] hr {
+    #custom-page-content > div hr {
         border-top: 1px solid var(--lighter-grey-2);
     }
     
-    [class^="ContentHeader_logoTitleSection"],
-    [class*=" ContentHeader_logoTitleSection"] {
+    [class*="ContentHeader-module"][class*="__logoTitleSection"] {
         color: var(--whitish);
     }
 
-    [class^="ContentHeader_tagList"] > span,
-    [class*=" ContentHeader_tagList"] > span {
+    [class*="ContentHeader-module"][class*="__tagList"] > span {
         background-color: #393939;
         color: rgb(140, 140, 140);
         padding-left: 9px;
@@ -202,14 +171,12 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         padding-bottom: 2px;
     }
 
-    [class^="Logo_root"],
-    [class*=" Logo_root"] {
+    [class*="Logo-module"][class*="__root"] {
         border-color: var(--theme-color-action-hover);
         background-color: var(--theme-color-action);
     }
 
-    a[class^="SocialLinks_link"],
-    a[class*=" SocialLinks_link"] {
+    #social-links a {
         /*background-color: var(--theme-color-components-primary-button-background);*/
         background-color: var(--whitish);
         padding: 5px;
@@ -217,26 +184,22 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         border-radius: 20px;
     }
 
-    [class^="ChatTextField_root"] :empty::before,
-    [class*=" ChatTextField_root"] :empty::before {
+    #chat-input :empty::before {
         color: var(--theme-color-action);
         font-weight: bold;
     }
 
-    [class^="ChatTextField_root"],
-    [class*=" ChatTextField_root"] {
+    #chat-input {
         color: var(--whitish);
     }
 
-    [class^="ChatTextField_inputWrap"],
-    [class*=" ChatTextField_inputWrap"] {
+    #chat-input [class*="__inputWrap"] {
         background-color: transparent!important;
         border: 1px solid var(--theme-color-action);
         color: var(--whitish)!important;
     }
     
-    [class^="ChatSystemMessage_chatSystemMessage"],
-    [class*=" ChatSystemMessage_chatSystemMessage"] {
+    .chat-message_system {
         /*
         background: var(--theme-color-action);
         background: linear-gradient(70deg,var(--theme-color-action),var(--theme-color-action-hover) 40%,var(--theme-color-action) 80%);
@@ -250,50 +213,40 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     }
     
     /* Followers list */
-    [class^="FollowerCollection_followerRow"] > div > a,
-    [class*=" FollowerCollection_followerRow"] > div > a {
+    [class*="FollowerCollection-module"][class*="__followerRow"] > div > a {
         text-decoration: none;
     }
-    [class^="FollowerCollection_followerRow"] > div > a > div,
-    [class*=" FollowerCollection_followerRow"] > div > a > div {
+    [class*="FollowerCollection-module"][class*="__followerRow"] > div > a > div {
         background-color: transparent;
         
     }
     
-    [class^="SingleFollower_username"],
-    [class*=" SingleFollower_username"],
-    [class^="SingleFollower_account"],
-    [class*=" SingleFollower_account"] {
+    [class*="SingleFollower-module"][class*="__username"],
+    [class*="SingleFollower-module"][class*="__account"] {
         color: var(--whitish)!important;
         font-weight: normal;
     }
     
    
-    [class^="SingleFollower_follower"],
-    [class*=" SingleFollower_follower"] {
+    .followers-follower {
         border: none;
         border-bottom: 3px solid transparent;
     }
-    [class^="SingleFollower_follower"]:hover,
-    [class*=" SingleFollower_follower"]:hover {
+    .followers-follower:hover {
         border: none;
         border-bottom: 3px solid var(--theme-color-action);
         border-radius: 0
     }
     
-    [class^="FollowerCollection_pagination"] > li > button,
-    [class*=" FollowerCollection_pagination"] > li > button,
-    [class^="FollowerCollection_pagination"] > li,
-    [class*=" FollowerCollection_pagination"] > li {
+    [class*="FollowerCollection-module"][class*="__pagination"] > li > button,
+    [class*="FollowerCollection-module"][class*="__pagination"] > li {
         background-color: var(--lighter-grey-2)!important;
         border: none!important;
         font-weight: bold!important;
     }
     
-    [class^="FollowerCollection_pagination"] > li > button,
-    [class*=" FollowerCollection_pagination"] > li > button,
-    [class^="FollowerCollection_pagination"] > li > a,
-    [class*=" FollowerCollection_pagination"] > li > a {
+    [class*="FollowerCollection-module"][class*="__pagination"] > li > button,
+    [class*="FollowerCollection-module"][class*="__pagination"] > li > a {
         color: var(--whitish)!important;
     }
 
