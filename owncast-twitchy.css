@@ -91,6 +91,8 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
     #chat-container {
         background-color: var(--lighter-grey);
+        /* Keep the line height previously inherited in Owncast 0.2.x. */
+        line-height: 1.5715;
     }
 
     [class*="ChatContainer-module"][class*="__chatTextField"] {
@@ -200,11 +202,6 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     }
     
     .chat-message_system {
-        /*
-        background: var(--theme-color-action);
-        background: linear-gradient(70deg,var(--theme-color-action),var(--theme-color-action-hover) 40%,var(--theme-color-action) 80%);
-        */
-        background:none;
         margin: 5px 5px 10px;
         border-radius: 5px;
         border-width: 1px;
