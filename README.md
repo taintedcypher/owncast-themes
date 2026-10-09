@@ -15,8 +15,6 @@ Well you could use this theme!
 
 For Owncast 0.2.3, use the [`owncast-0.2.3` tag](https://github.com/taintedcypher/owncast-themes/tree/owncast-0.2.3).
 
-**Note about chat badges**: Authenticated-user and moderator badges appear after the username.
-
 ### Installation
 
 1. Copy the content of the `owncast-twitchy.css` file;
