@@ -73,6 +73,7 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         --lighter-grey-2: #29292E;
         --lighter-grey: #131516;
         --whitish: rgb(239, 239, 241);
+        --twitchy-link: #bf94ff;
     }
 
     body {
@@ -84,7 +85,7 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     }
 
     [class*="Content-module"][class*="__mobileActionButtons"] {
-        color: var(--theme-color-action);
+        color: var(--twitchy-link);
         font-weight: bolder;
     }
 
@@ -127,7 +128,11 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
     .ant-tabs .ant-tabs-tab {
         /*background-color: red;*/
-        color: var(--theme-color-action);
+        color: var(--twitchy-link);
+    }
+    .ant-tabs .ant-tabs-nav .ant-tabs-nav-more,
+    .ant-tabs .ant-tabs-nav .ant-btn-text {
+        color: var(--whitish);
     }
     .ant-tabs .ant-tabs-tab:hover {
         color: var(--whitish);
@@ -139,6 +144,20 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     }
     .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
 	    color: var(--whitish)!important;
+    }
+
+    .ant-btn.owncast.ant-btn-primary:not(:disabled):hover {
+        background-color: var(--twitchy-link);
+        border-color: var(--twitchy-link);
+        color: var(--darker-grey);
+    }
+
+    .ant-modal .ant-select-suffix {
+        color: var(--theme-color-components-text-on-light);
+    }
+
+    .ant-modal .ant-input::placeholder {
+        color: #666;
     }
 
     #custom-page-content > div,
@@ -154,6 +173,21 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         font-weight: bold;
     }
 
+    /* Light link text only on dark panels; dialogs retain their own palette. */
+    #custom-page-content a,
+    #followers-collection a,
+    [class*="OfflineBanner-module"] .follow-link,
+    [class*="OfflineBanner-module"] .notify-link {
+        color: var(--twitchy-link);
+    }
+
+    #custom-page-content a:hover,
+    #followers-collection a:hover,
+    [class*="OfflineBanner-module"] .follow-link:hover,
+    [class*="OfflineBanner-module"] .notify-link:hover {
+        color: var(--whitish);
+    }
+
     
     #custom-page-content > div hr {
         border-top: 1px solid var(--lighter-grey-2);
@@ -165,7 +199,7 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
     [class*="ContentHeader-module"][class*="__tagList"] > span {
         background-color: #393939;
-        color: rgb(140, 140, 140);
+        color: var(--whitish);
         padding-left: 9px;
         border-radius: 20px;
         padding-right: 5px;
@@ -186,7 +220,7 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     }
 
     #chat-input :empty::before {
-        color: var(--theme-color-action);
+        color: var(--twitchy-link);
         font-weight: bold;
     }
 
@@ -194,10 +228,26 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         color: var(--whitish);
     }
 
+    /* Native buttons do not inherit the input wrapper's text color. */
+    #owncast-emoji-picker-button,
+    #owncast-send-message-button {
+        color: inherit;
+    }
+
+    #owncast-emoji-picker-button:focus-visible,
+    #owncast-send-message-button:focus-visible {
+        outline: 2px solid var(--whitish);
+        outline-offset: 2px;
+    }
+
     #chat-input [class*="__inputWrap"] {
         background-color: transparent!important;
-        border: 1px solid var(--theme-color-action);
+        border: 1px solid var(--twitchy-link);
         color: var(--whitish)!important;
+    }
+
+    #chat-input [class*="__inputWrap"][class*="__maxCharacters"] {
+        border: 2px solid #ff8080;
     }
     
     .chat-message_system {

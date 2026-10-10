@@ -23,3 +23,5 @@ For Owncast 0.2.3, use the [`owncast-0.2.3` tag](https://github.com/taintedcyphe
 4. Click "Save" under the text field.
 
 **Note:** You probably want to reset all Owncast colors to their default value, then only change the shades of purple, which are used throughout the custom theme on several elements.
+
+The stylesheet's `--twitchy-link` color controls light purple text on dark panels and primary-button hover backgrounds. If you customize it, check contrast on both surfaces.
