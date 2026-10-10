@@ -1,8 +1,8 @@
-# A custom theme for Owncast 0.1.1
+# A custom theme for Owncast 0.3.0
 
 I know we don't like Twitch. Ssssh! We don't! We prefer [Owncast](https://owncast.online)!
 
-But what if you wanted a nice theme for the next version of Owncast, that kinda reminds you of Twitch?
+But what if you wanted a nice theme for Owncast, that kinda reminds you of Twitch?
 
 Well you could use this theme!
 
@@ -11,9 +11,9 @@ Well you could use this theme!
 ## How to use
 
 ### Requirements
-- Owncast 0.2.*
+- Owncast 0.3.0
 
-**Note about Owncast 0.2.\***: Due to changes in the underlying htm lmarkup of the chat, the badges that appear when a user is authenticated or is a moderator cannot be aligned consistently. For this reason, the badges are not presented to the left of the username anymore.
+For Owncast 0.2.3, use the [`owncast-0.2.3` tag](https://github.com/taintedcypher/owncast-themes/tree/owncast-0.2.3).
 
 ### Installation
 
@@ -23,3 +23,5 @@ Well you could use this theme!
 4. Click "Save" under the text field.
 
 **Note:** You probably want to reset all Owncast colors to their default value, then only change the shades of purple, which are used throughout the custom theme on several elements.
+
+The stylesheet's `--twitchy-link` color controls light purple text on dark panels and primary-button hover backgrounds. If you customize it, check contrast on both surfaces.
